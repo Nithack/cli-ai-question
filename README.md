@@ -1,5 +1,3 @@
-Compreendido, aqui está a descrição do projeto com o título "CLI-AI-QUESTION":
-
 ## CLI-AI-QUESTION
 
 CLI-AI-QUESTION - Um CLI em Node.js para obter respostas do ChatGPT usando a biblioteca da OpenAI.
@@ -22,7 +20,8 @@ Este projeto é o início de um projeto maior que será convertido em TypeScript
 2. Instale as dependências com `npm install`
 3. Crie uma conta gratuita na OpenAI e gere uma chave de API
 4. Defina a chave de API da OpenAI como uma variável de ambiente: `export OPENAI_API_KEY=your_api_key_here`
-5. Execute o CLI com `node index.js`
+5. Execute o comando `npm link` na pasta do projeto para torná-lo globalmente disponível no console
+6. Execute o comando `cai ask` em qualquer console do PC, seguido da sua pergunta. Por exemplo: `cai ask "Como renomear um arquivo pelo prompt?"`
 
 ## Comandos
 
