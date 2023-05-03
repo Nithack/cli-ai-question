@@ -21,7 +21,7 @@ Este projeto é o início de um projeto maior que será convertido em TypeScript
 3. Crie uma conta gratuita na OpenAI e gere uma chave de API
 4. Defina a chave de API da OpenAI como uma variável de ambiente: `export OPENAI_API_KEY=your_api_key_here`
 5. Execute o comando `npm link` na pasta do projeto para torná-lo globalmente disponível no console
-6. Execute o comando `cai ask` em qualquer console do PC, seguido da sua pergunta. Por exemplo: `cai ask "Como renomear um arquivo pelo prompt?"`
+6. Execute o comando `caq ask` em qualquer console do PC, seguido da sua pergunta. Por exemplo: `caq ask "Como renomear um arquivo pelo prompt?"`
 
 ## Comandos
 
