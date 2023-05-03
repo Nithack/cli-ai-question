@@ -25,7 +25,7 @@ async function ask(question) {
     messages: basicQuestion,
   }).then((response) => {
     console.log(response.data.choices[0].message.content)
-    return response.data.choices[0].message.content;
+    return JSON.stringify(response.data.choices[0].message.content);
   }).catch((err) => {
     console.log(err.response);
   });
@@ -34,9 +34,7 @@ async function ask(question) {
 program
   .command('ask [pergunta]')
   .description('Faz uma pergunta')
-  .action(async (todo) => {
-    console.log(await ask(todo));
-  });
+  .action(ask);
 
 
 program.parse(process.argv);
