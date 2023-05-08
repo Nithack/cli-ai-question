@@ -3,3 +3,4 @@ class OpenAIInterface {
     throw new Error('Not implemented');
   }
 }
+export default OpenAIInterface;
