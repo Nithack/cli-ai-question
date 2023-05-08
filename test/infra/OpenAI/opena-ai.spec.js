@@ -9,7 +9,7 @@ describe('OpenAI', () => {
   test('should return a response question', async () => {
     const answer = 'What this is app use for?'
     const answerResponse = 'This app is used to answer questions about anything.'
-    const response = await openAI.getAnswer('question');
+    const response = await openAI.getAnswer(answer);
     expect(response).toEqual(answerResponse);
   });
 });
