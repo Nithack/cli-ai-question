@@ -4,6 +4,7 @@ class OpenAI extends OpenAIInterface {
 
   constructor() {
     super()
+    if (process.env.OPENAI_API_KEY === undefined) throw new Error('OPENAI_API_KEY is undefined')
     this.openai = new OpenAIApi(new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     }))

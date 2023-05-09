@@ -5,8 +5,14 @@ import { describe, expect, jest } from '@jest/globals'
 describe('OpenAI', () => {
   let openAI
   beforeEach(() => {
+    process.env.OPENAI_API_KEY = '123456789'
     openAI = new OpenAI()
     jest.clearAllMocks()
+  })
+
+  test('should exception because api key is undefined', async () => {
+    delete process.env.OPENAI_API_KEY
+    expect(() => new OpenAI()).toThrowError('OPENAI_API_KEY is undefined')
   })
 
   test('should openai return status 401 because api key is not undefined', async () => {
@@ -24,6 +30,7 @@ describe('OpenAI', () => {
     const answer = 'What this is app use for?'
     expect(openAI.getAnswer(answer)).rejects.toThrowError(`[ERROR] ${defaultErrorAPIKEY} [401]`)
   })
+
   test('should openai return response', async () => {
     jest.spyOn(openAI.openai, 'createChatCompletion').mockResolvedValue({
       data: {
