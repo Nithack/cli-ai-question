@@ -15,7 +15,7 @@ describe('OpenAI', () => {
     expect(() => new OpenAI()).toThrowError('OPENAI_API_KEY is undefined')
   })
 
-  test('should openai return status 401 because api key is not undefined', async () => {
+  test('should be return status 401 because api key is not undefined', async () => {
     const defaultErrorAPIKEY = `Incorrect API key provided: undefined. You can find your API key at https://platform.openai.com/account/api-keys.`
     jest.spyOn(openAI.openai, 'createChatCompletion').mockRejectedValueOnce({
       response: {
@@ -31,7 +31,7 @@ describe('OpenAI', () => {
     expect(openAI.getAnswer(answer)).rejects.toThrowError(`[ERROR] ${defaultErrorAPIKEY} [401]`)
   })
 
-  test('should openai return response', async () => {
+  test('should be return response', async () => {
     jest.spyOn(openAI.openai, 'createChatCompletion').mockResolvedValue({
       data: {
         choices: [{
