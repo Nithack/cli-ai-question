@@ -1,7 +1,7 @@
 import OpenAI from '../../../src/infra/OpenAI/OpenAI'
 import { describe, expect, jest } from '@jest/globals'
 
-// mock OPENAI MODULE
+
 describe('OpenAI', () => {
   let openAI
   beforeEach(() => {
