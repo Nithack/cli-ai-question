@@ -3,16 +3,27 @@ on: ["push"]
 
 jobs:
   build:
+    permissions: write-all
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x,]
+
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: |
-          npx jest --coverage --coverageReporters json-summary
-
-      - name: Jest Coverage Comment
-        uses: MishaKav/jest-coverage-comment@main
+    - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        skip-step: none
+    - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        test-script: npm run test:cov
+        skip-step: none
