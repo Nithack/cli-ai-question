@@ -1,4 +1,5 @@
 ## CLI-AI-QUESTION
+![image](https://user-images.githubusercontent.com/59296988/235871177-375f2983-86e3-4681-91b6-444a737b7767.png)
 
 CLI-AI-QUESTION - Um CLI em Node.js para obter respostas do ChatGPT usando a biblioteca da OpenAI.
 
