@@ -17,7 +17,6 @@ class OpenAI extends OpenAIInterface {
         { "role": "user", "content": question },
       ],
     }).then((response) => {
-      console.log('then', response)
       return response.data.choices[0].message.content
     }).catch((err) => {
       throw new Error(`[ERROR] ${err.response.data.error.message} [${err.response.status}]`);
