@@ -2,24 +2,8 @@ name: Coverage Workflow
 on: ["push"]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x,]
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install
-    - uses: ArtiomTr/jest-coverage-report-action@v2
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        test-script: npm run test:cov
-        skip-step: none
+  coverage:
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v3
+          - uses: ArtiomTr/jest-coverage-report-action@v2
