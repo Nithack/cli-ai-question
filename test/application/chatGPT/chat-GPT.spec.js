@@ -24,7 +24,10 @@ describe('OpenAI', () => {
       }
     })
     const question = new Question('Olá', 'cli')
-    expect(await chatgpt.getAnswer(question)).toEqual({ answer: "This is a test", question: { question: "Olá", user: "cli" } })
+    const result = await chatgpt.getAnswer(question)
+    expect(result).toEqual({ answer: "This is a test", question: { question: "Olá", user: "cli" } })
+    expect(result.getAnswer()).toEqual('This is a test')
+    expect(result.getQuestion()).toEqual('Olá')
   })
 
   test('should exception because openai return is undefined', async () => {

@@ -7,6 +7,6 @@ export class Answer {
     return this.answer;
   }
   getQuestion() {
-    return this.question.getAnswer();
+    return this.question.getQuestion();
   }
 }
