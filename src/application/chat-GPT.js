@@ -1,6 +1,6 @@
 
-import ChatGPTInterface from './chat-GPT.interface'
-import { Answer } from './model/answer'
+import ChatGPTInterface from './chat-GPT.interface.js'
+import { Answer } from './model/answer.js'
 class ChatGPT extends ChatGPTInterface {
   constructor(openAI) {
     super()

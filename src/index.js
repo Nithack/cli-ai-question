@@ -1,9 +1,13 @@
 import dotenv from 'dotenv';
+import ChatGPT from './application/chat-GPT.js';
+import OpenAI from './infra/OpenAI/OpenAI.js'
+import { Question } from './application/model/question.js'
 dotenv.config();
 
-import OpenAI from './infra/OpenAI/OpenAI.js'
-
 const openai = new OpenAI();
-openai.getAnswer('Olá').then((response) => {
+const chatgpt = new ChatGPT(openai)
+const question = new Question('Olá', 'cli')
+
+chatgpt.getAnswer(question).then((response) => {
   console.log(response);
 })
