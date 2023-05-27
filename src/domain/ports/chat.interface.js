@@ -1,6 +1,6 @@
-class ChatGPTInterface {
+class ChatInterface {
   constructor() {
-    if (this.constructor === ChatGPTInterface) {
+    if (this.constructor === ChatInterface) {
       throw new Error('Abstract classes can\'t be instantiated.');
     }
   }
@@ -9,4 +9,4 @@ class ChatGPTInterface {
   }
 }
 
-export default ChatGPTInterface
+export default ChatInterface;

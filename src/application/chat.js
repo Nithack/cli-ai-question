@@ -1,7 +1,7 @@
 
-import ChatGPTInterface from './chat-GPT.interface.js'
-import { Answer } from './model/answer.js'
-class ChatGPT extends ChatGPTInterface {
+import ChatInterface from '../domain/ports/chat.interface.js'
+import { Answer } from '../domain/model/answer.js'
+export default class Chat extends ChatInterface {
   constructor(openAI) {
     super()
     this.openAI = openAI
@@ -12,5 +12,3 @@ class ChatGPT extends ChatGPTInterface {
     return new Answer(answer, question)
   }
 }
-
-export default ChatGPT
