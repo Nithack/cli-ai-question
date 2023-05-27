@@ -1,5 +1,6 @@
 import { describe, expect, jest } from "@jest/globals";
-import CLIHandler from "../../src/interface/cli/ClIHandler.js";
+import CLIHandler from "../../src/interface/cli/ClIHandler";
+
 
 describe("test cliHandler", () => {
   test("should be return exception because command not found", () => {

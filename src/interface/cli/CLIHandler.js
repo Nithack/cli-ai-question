@@ -4,7 +4,7 @@ class CLIHandler {
     this.commands[command] = callBack;
   }
   async type(command, params) {
-    if(this.commands[command] === undefined) return;
+    if(this.commands[command] === undefined) throw new Error('Command not found');
     return await this.commands[command](params);
   }
   write(result) {
