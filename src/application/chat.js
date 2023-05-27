@@ -1,7 +1,7 @@
 
 import ChatInterface from '../domain/ports/chat.interface.js'
 import { Answer } from '../domain/model/answer.js'
-class Chat extends ChatInterface {
+export default class Chat extends ChatInterface {
   constructor(openAI) {
     super()
     this.openAI = openAI
@@ -12,5 +12,3 @@ class Chat extends ChatInterface {
     return new Answer(answer, question)
   }
 }
-
-export default Chat

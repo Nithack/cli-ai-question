@@ -1,8 +1,7 @@
-import ChatGenerateRepository from "../../../domain/ports/chat-generate.interface";
 import { OpenAIApi, Configuration } from 'openai';
+import ChatGenerateInterface from './../../../domain/ports/chat-generate.interface.js';
 
-
-class OpenAIRepository extends ChatGenerateRepository {
+class OpenAIRepository extends ChatGenerateInterface {
   constructor() {
     super();
     if (process.env.OPENAI_API_KEY === undefined)

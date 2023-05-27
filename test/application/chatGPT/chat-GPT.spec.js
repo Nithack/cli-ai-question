@@ -2,7 +2,7 @@
 import { describe, expect, jest } from '@jest/globals'
 import Chat from '../../../src/application/chat'
 import { Question } from '../../../src/domain/model/question'
-import OpenAIRepository from '../../../src/infra/chat-generator/open-ai/open-ai.repository'
+import OpenAIRepository from '../../../src/infra/chat-generator/open-ai/openAi.repository'
 
 describe('OpenAI', () => {
   let openAI

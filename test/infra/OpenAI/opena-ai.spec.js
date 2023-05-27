@@ -1,5 +1,6 @@
-import OpenAIRepository from '../../../src/infra/chat-generator/open-ai/open-ai.repository'
+
 import { describe, expect, jest } from '@jest/globals'
+import OpenAIRepository from '../../../src/infra/chat-generator/open-ai/openAi.repository'
 
 
 describe('OpenAI', () => {
